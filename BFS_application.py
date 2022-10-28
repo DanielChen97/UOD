@@ -16,7 +16,6 @@ if ".ipynb_checkpoints" in images_name:
 images_name.sort()
 images_num = len(images_name)
 print(images_num)
-print(images_name[0])
 
 
 for i in range(images_num):
