@@ -17,7 +17,9 @@ from utils import l2_regularisation
 from tools import *
 import matplotlib.pyplot as plt
 
-
+###########################################
+############# Before Training #############
+###########################################
 parser = argparse.ArgumentParser()
 parser.add_argument('--epoch', type=int, default=50, help='epoch number')
 parser.add_argument('--lr_gen', type=float, default=2.5e-5, help='learning rate for generator')
@@ -143,7 +145,9 @@ def yes_dropout(m):
     if type(m) == nn.Dropout:
         m.train()
 
-
+###########################################
+################ Training #################
+###########################################
 print("Let's go!")
 for epoch in range(1, (opt.epoch+1)):
     # scheduler.step()
