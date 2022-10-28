@@ -12,6 +12,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 import cv2
 import matplotlib.pyplot as plt
 
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=480, help='testing size')
 parser.add_argument('--feat_channel', type=int, default=256, help='reduced channel of saliency feat')
@@ -31,11 +32,10 @@ test_datasets = ['DUT-OMRON', 'ECSSD', 'DUTS']
 
 for dataset in test_datasets:
     save_path = './results/' + dataset + '/'
-    #save_path = './results/ResNet50/holo/train/left/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
-    image_root = dataset_path + dataset + '/'
+    image_root = dataset_path + dataset + '/img/'
     test_loader = test_dataset(image_root, opt.testsize)
     print(test_loader)
     for i in range(test_loader.size):
